@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 		"RETURN n.count" )
   .then( function(result){
   	var count = result.records[0].get("n.count");
-  	res.render('index', { title: 'Shinjin ' + count });
+  	res.render('index', { title: 'Shinjin ' + count, hostname:os.hostname() });
   })
   .catch(function(error) {
   	res.render('index', {error:error})
