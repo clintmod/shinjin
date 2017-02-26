@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var neo4j = require('neo4j-driver').v1;
-var neo4jurl = process.env.NEO4J_ENV_DOCKERCLOUD_SERVICE_FQDN || "neo4j"
+var neo4jurl = process.env.NEO4J_ENV_DOCKERCLOUD_SERVICE_HOSTNAME || "neo4j"
 var driver = neo4j.driver("bolt://" + neo4jurl, neo4j.auth.basic("neo4j", "asdf1234"));
 
 /* GET home page. */
