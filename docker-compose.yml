@@ -6,8 +6,10 @@ web:
    - neo4j
   ports:
    - "3000:3000"
+  command: sh -c 'npm install; npm install -g nodemon ; nodemon --watch routes --watch bin --watch views --watch app.js --watch bin/www -e js,jade bin/www'
   working_dir: /usr/src/app
-  entrypoint: npm start
+  environment:
+    - NODE_ENV=development
 neo4j:
   image: neo4j:latest
   ports:
